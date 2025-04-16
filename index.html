@@ -1,70 +1,177 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アプリサポートページ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .images {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .images img {
-            width: 100%;
-            max-width: 32%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>25:5 - Pure Pomodoro</title>
+  <style>
+    /* リセット・基本設定 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ナビゲーション */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .navbar .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+    }
+    .navbar ul li {
+      margin-left: 20px;
+    }
+    .navbar ul li a {
+      color: #fff;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+    .navbar ul li a:hover {
+      color: #f0a500;
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url('image.png') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* ダークオーバーレイ */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.5em;
+    }
+
+    /* セクション共通 */
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      color: #222;
+    }
+    .section p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* フッター */
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* レスポンシブ対応 */
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2.5em; }
+      .hero p { font-size: 1.2em; }
+      .navbar { padding: 0 10px; }
+      .navbar ul li { margin-left: 10px; }
+      .section h2 { font-size: 2em; }
+      .section p { font-size: 1em; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>アプリサポートページ</h1>
-    </header>
-    <div class="container">
-        <section>
-            <h2>ようこそ！</h2>
-            <p>このページでは、アプリ「並べメモ」に関するサポート情報をご提供します。操作方法やトラブルシューティングについて知りたい場合は、下記の画像や説明をご覧ください。</p>
-        </section>
-
-        <section class="images">
-            <img src="image1.png" alt="説明画像1">
-            <img src="image2.png" alt="説明画像2">
-            <img src="image3.png" alt="説明画像3">
-        </section>
+  <!-- ナビゲーション -->
+  <nav class="navbar">
+    <div class="logo">25:5</div>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- ヒーローセクション -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>25:5</h1>
+      <p>Just the timer. Nothing else.</p>
     </div>
-    <footer>
-        <p>&copy; 2024 並べメモ サポートチーム</p>
-    </footer>
+  </section>
+  
+  <!-- 特徴セクション -->
+  <section id="features" class="section">
+    <h2>Features</h2>
+    <p>Minimalist Pomodoro timer designed for deep focus.</p>
+    <p>Automatic work/break cycles with optional long breaks.</p>
+    <p>Vibration and sound alerts to keep you on track — nothing more, nothing less.</p>
+  </section>
+  
+  <!-- 概要セクション -->
+  <section id="about" class="section" style="background: #f9f9f9;">
+    <h2>About 25:5</h2>
+    <p>25:5 is a distraction-free timer app based on the Pomodoro Technique.</p>
+    <p>It helps you stay productive with a simple, elegant interface and no unnecessary features or clutter.</p>
+  </section>
+  
+  <!-- お問い合わせセクション -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>If you have any questions or feedback, feel free to reach out.</p>
+    <p>Email: so999577@aol.com</p>
+  </section>
+  
+  <!-- フッター -->
+  <footer>
+    &copy; 2025 25:5. All Rights Reserved.
+  </footer>
 </body>
 </html>
